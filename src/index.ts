@@ -1,6 +1,5 @@
 export interface Env {
   DB: D1Database;
-  ASSETS: Fetcher;  // ← tambah ini kalau perlu
 }
 
 export default {
