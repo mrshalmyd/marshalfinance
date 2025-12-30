@@ -1,0 +1,7 @@
+{
+  "name": "marshalfinance",               // ← GANTI ini jadi nama project kamu di dashboard Cloudflare Workers & Pages (harus persis sama!)
+  "compatibility_date": "2025-12-30",     // atau tanggal hari ini/terbaru
+  "assets": {
+    "directory": "."                      // ← titik artinya root repo itu sendiri (karena index.html & folder css/assets ada di root)
+  }
+}
