@@ -1,7 +1,13 @@
 {
-  "name": "marshalfinance",               // ← GANTI ini jadi nama project kamu di dashboard Cloudflare Workers & Pages (harus persis sama!)
-  "compatibility_date": "2025-12-30",     // atau tanggal hari ini/terbaru
+  "name": "mfinance",                          // ← GANTI INI jadi mfiance (persis sama dengan nama project di dashboard!)
+  "compatibility_date": "2025-12-30",         // atau update ke tanggal hari ini, misal "2025-12-30"
   "assets": {
-    "directory": "."                      // ← titik artinya root repo itu sendiri (karena index.html & folder css/assets ada di root)
-  }
+    "directory": ".",
+    "not_found_handling": "single-page-application"  // opsional tapi recommended untuk static site
+  },
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "finance_db",
+    "database_id": "931bfa74-ed31-4019-9941-ec374ff93cc5"
+ }]
 }
