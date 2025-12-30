@@ -1,6 +1,10 @@
 /* ==========================================================================
    Navbar (Landing & Dashboard)
    ========================================================================== */
+
+/* ------------------------------------------------------------------
+   Navbar Base
+   ------------------------------------------------------------------ */
 .navbar {
   position: fixed;
   top: 0;
@@ -24,16 +28,22 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
+/* ------------------------------------------------------------------
+   Logo
+   ------------------------------------------------------------------ */
 .logo {
   font-size: 1.8rem;
   font-weight: 700;
-  color: white;
+  color: #fff;
 }
 
 .logo span {
   color: #6366f1;
 }
 
+/* ------------------------------------------------------------------
+   Navigation Links
+   ------------------------------------------------------------------ */
 .nav-links {
   display: flex;
   gap: 1.6rem;
@@ -48,7 +58,7 @@
 }
 
 .nav-links a:hover {
-  color: white;
+  color: #fff;
 }
 
 .btn-nav {
@@ -60,7 +70,9 @@
   border: 1px solid rgba(99, 102, 241, 0.5);
 }
 
-/* User Nav di Dashboard */
+/* ------------------------------------------------------------------
+   User Nav (Dashboard)
+   ------------------------------------------------------------------ */
 .nav-user {
   display: flex;
   align-items: center;
@@ -81,7 +93,9 @@
   font-weight: 600;
 }
 
-/* Hamburger */
+/* ------------------------------------------------------------------
+   Hamburger Menu
+   ------------------------------------------------------------------ */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -92,21 +106,35 @@
 .hamburger span {
   width: 26px;
   height: 3px;
-  background: white;
+  background: #fff;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
 
-.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(7px, 7px); }
-.hamburger.active span:nth-child(2) { opacity: 0; }
-.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
 
-/* Mobile */
+/* ------------------------------------------------------------------
+   Mobile Styles
+   ------------------------------------------------------------------ */
 @media (max-width: 768px) {
-  .hamburger { display: flex; }
-  .nav-menu, .nav-user { 
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu,
+  .nav-user {
     position: absolute;
-    top: 100%; left: 0; right: 0;
+    top: 100%;
+    left: 0;
+    right: 0;
     background: rgba(10, 10, 21, 0.98);
     padding: 1.5rem 5%;
     flex-direction: column;
@@ -115,13 +143,30 @@
     visibility: hidden;
     transition: all 0.35s ease;
   }
-  .nav-menu.active, .nav-user.active {
+
+  .nav-menu.active,
+  .nav-user.active {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
   }
-  .nav-links { flex-direction: column; gap: 1.6rem; }
-  .nav-user { gap: 1rem; }
-  .welcome { font-size: 1rem; max-width: 140px; }
-  .btn-logout { padding: 0.5rem 1rem; font-size: 0.95rem; }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .nav-user {
+    gap: 1rem;
+  }
+
+  .welcome {
+    font-size: 1rem;
+    max-width: 140px;
+  }
+
+  .btn-logout {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
 }

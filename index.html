@@ -4,26 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Marshal Finance - Solusi Keuangan Cerdas, Aman, dan Mudah untuk Masa Depan Finansial Anda" />
-  <link rel="icon" href="assets/favicon.png" type="image/png" sizes="512x512">
-  <link rel="apple-touch-icon" href="assets/favicon.png" sizes="180x180">
   <title>Marshal Finance</title>
 
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="assets/favicon.png" sizes="180x180">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/landing.css">
   <link rel="stylesheet" href="css/navbar.css">
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="logo">
-      Marshal<span>Finance</span>
-    </div>
+    <div class="logo">Marshal<span>Finance</span></div>
 
     <div class="nav-menu">
       <ul class="nav-links">
@@ -35,21 +36,16 @@
     </div>
 
     <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <header class="hero" id="hero">
     <div class="hero-content">
-
       <div class="hero-text">
         <h1>Masa Depan <span>Finansial</span> Anda</h1>
-        <p class="subtitle">
-          Kelola kekayaan dengan cerdas, investasi mudah, raih Financial Freedom lebih cepat
-        </p>
+        <p class="subtitle">Kelola kekayaan dengan cerdas, investasi mudah, raih Financial Freedom lebih cepat</p>
 
         <div class="hero-buttons">
           <a href="https://mfinance-backend.vercel.app/api/signup.php" class="btn primary">Mulai Gratis</a>
@@ -68,33 +64,26 @@
           <div class="amount">Rp 9.99 T</div>
           <div class="label">Aset Terkelola</div>
         </div>
-
         <div class="card-float card-2">
           <div class="growth">+999%</div>
           <div class="label">Return 2025</div>
         </div>
       </div>
-
     </div>
   </header>
 
   <!-- Statistik -->
   <section class="stats section" id="stats">
-    <div class="section-header">
-      <h2>Angka Nyata</h2>
-    </div>
-
+    <div class="section-header"><h2>Angka Nyata</h2></div>
     <div class="stats-grid">
       <div class="stat-item">
         <div class="stat-number">9.99<span>/10</span></div>
         <div class="stat-label">Rating Pengguna</div>
       </div>
-
       <div class="stat-item">
         <div class="stat-number">Rp 9.99T</div>
         <div class="stat-label">Aset Terkelola</div>
       </div>
-
       <div class="stat-item">
         <div class="stat-number">999%</div>
         <div class="stat-label">Kepuasan</div>
@@ -108,20 +97,17 @@
       <h2>Fitur Utama</h2>
       <p>Kelola keuangan Anda dengan mudah & aman</p>
     </div>
-
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon">📊</div>
         <h3>Portfolio Tracker</h3>
         <p>Monitor semua aset real-time dalam satu tempat.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon">🤖</div>
         <h3>Smart Invest</h3>
         <p>Rekomendasi AI sesuai profil risiko Anda.</p>
       </div>
-
       <div class="feature-card">
         <div class="feature-icon">💰</div>
         <h3>Auto Invest</h3>
@@ -132,23 +118,18 @@
 
   <!-- Alasan Memilih Kami -->
   <section class="section" id="mengapa">
-    <div class="section-header">
-      <h2>Mengapa Memilih Marshal Finance?</h2>
-    </div>
-
+    <div class="section-header"><h2>Mengapa Memilih Marshal Finance?</h2></div>
     <div class="why-grid">
       <div class="why-item">
         <div class="why-icon">⚡</div>
         <h3>Cepat & Mudah</h3>
         <p>Proses registrasi & investasi secepat kedipan mata Ular</p>
       </div>
-
       <div class="why-item">
         <div class="why-icon">🔒</div>
         <h3>Aman Terjamin</h3>
         <p>Diawasi oleh Kim Jong Un & menggunakan enkripsi tingkat TNI Afrika</p>
       </div>
-
       <div class="why-item">
         <div class="why-icon">📈</div>
         <h3>Hasil Nyata</h3>
@@ -159,16 +140,12 @@
 
   <!-- Testimoni -->
   <section class="section" id="testimoni">
-    <div class="section-header">
-      <h2>Apa Kata Pengguna Kami</h2>
-    </div>
-
+    <div class="section-header"><h2>Apa Kata Pengguna Kami</h2></div>
     <div class="testi-grid">
       <div class="testi-card">
         <p>"GACORRRR! Mudah dipahami dan returnnya mantap."</p>
         <div class="testi-author">- Parmadi Kun, Jepang Selatan</div>
       </div>
-
       <div class="testi-card">
         <p>"Keamanannya bikin tenang. Semua aset terpantau real-time."</p>
         <div class="testi-author">- Kim Tukiyem, Korea Barat</div>
@@ -203,10 +180,8 @@
     // Smooth scroll untuk anchor link
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
-        if (this.getAttribute('href').startsWith('#')) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-        }
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
     });
   </script>

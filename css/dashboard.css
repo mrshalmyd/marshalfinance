@@ -1,6 +1,10 @@
 /* ==========================================================================
    Dashboard Specific
    ========================================================================== */
+
+/* ------------------------------------------------------------------
+   Layout & Header
+   ------------------------------------------------------------------ */
 .dashboard-content {
   padding: 110px 6% 80px;
   max-width: 1300px;
@@ -29,6 +33,9 @@
   margin: 0 auto;
 }
 
+/* ------------------------------------------------------------------
+   Summary Cards
+   ------------------------------------------------------------------ */
 .summary-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
@@ -51,6 +58,9 @@
 .positive { color: #34d399; }
 .small-label { font-size: 1rem; color: #94a3b8; }
 
+/* ------------------------------------------------------------------
+   Quick Actions
+   ------------------------------------------------------------------ */
 .quick-actions {
   text-align: center;
   margin: 3rem 0;
@@ -81,6 +91,9 @@
   box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
 }
 
+/* ------------------------------------------------------------------
+   Chart & Transactions
+   ------------------------------------------------------------------ */
 .chart-container {
   background: rgba(20, 20, 50, 0.6);
   border-radius: 16px;
@@ -101,11 +114,24 @@
   align-items: center;
 }
 
-.transaction-item:last-child { border: none; }
+.transaction-item:last-child {
+  border: none;
+}
 
+/* ------------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------------ */
 @media (max-width: 768px) {
-  .dashboard-content { padding: 100px 5% 60px; }
-  .dashboard-header h1 { font-size: 2.6rem; }
-  .summary-cards { grid-template-columns: 1fr; }
-  .big-value { font-size: 2.6rem; }
+  .dashboard-content {
+    padding: 100px 5% 60px;
+  }
+  .dashboard-header h1 {
+    font-size: 2.6rem;
+  }
+  .summary-cards {
+    grid-template-columns: 1fr;
+  }
+  .big-value {
+    font-size: 2.6rem;
+  }
 }

@@ -1,20 +1,31 @@
 {
+  // Nama project
   "name": "mfinance",
+
+  // Entry point Worker (TypeScript)
   "main": "src/index.ts",
+
+  // Tanggal kompatibilitas Cloudflare Workers
   "compatibility_date": "2025-12-30",
 
+  /* ------------------------------------------------------------------
+     Static Assets Binding
+     ------------------------------------------------------------------ */
   "assets": {
-    "directory": "./",                  
-    "binding": "ASSETS",                
-    "not_found_handling": "single-page-application",  
-    "run_worker_first": ["/api/*"]      
+    "directory": "./",                        // Folder root untuk file statis
+    "binding": "ASSETS",                      // Nama binding di Worker (env.ASSETS)
+    "not_found_handling": "single-page-application", // Fallback ke SPA routing
+    "run_worker_first": ["/api/*"]            // Pastikan route /api/* ditangani Worker dulu
   },
 
+  /* ------------------------------------------------------------------
+     D1 Database Binding
+     ------------------------------------------------------------------ */
   "d1_databases": [
     {
-      "binding": "DB",
-      "database_name": "finance-db",
-      "database_id": "931bfa74-ed31-4019-9941-ec374ff93cc5"
+      "binding": "DB",                        // Nama binding di Worker (env.DB)
+      "database_name": "finance-db",          // Nama database di Cloudflare D1
+      "database_id": "931bfa74-ed31-4019-9941-ec374ff93cc5" // ID unik database
     }
   ]
 }

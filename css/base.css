@@ -15,7 +15,9 @@ body {
   overflow-x: hidden;
 }
 
-/* Typography Global */
+/* ------------------------------------------------------------------
+   Typography Global
+   ------------------------------------------------------------------ */
 h1, h2, h3, h4 {
   font-weight: 700;
 }
@@ -24,7 +26,9 @@ p {
   color: #b0b0ff;
 }
 
-/* Buttons Global */
+/* ------------------------------------------------------------------
+   Buttons Global
+   ------------------------------------------------------------------ */
 .btn {
   padding: 0.9rem 1.8rem;
   border-radius: 10px;
@@ -38,7 +42,7 @@ p {
 
 .btn.primary {
   background: linear-gradient(90deg, #6366f1, #8b5cf6);
-  color: white;
+  color: #fff;
 }
 
 .btn.secondary {
@@ -52,7 +56,9 @@ p {
   font-size: 1.1rem;
 }
 
-/* Cards Global */
+/* ------------------------------------------------------------------
+   Cards Global
+   ------------------------------------------------------------------ */
 .card {
   background: linear-gradient(135deg, rgba(30, 30, 60, 0.6), rgba(20, 20, 50, 0.5));
   backdrop-filter: blur(16px);
@@ -68,7 +74,9 @@ p {
   box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
 }
 
-/* Responsive Helper */
+/* ------------------------------------------------------------------
+   Responsive Helper
+   ------------------------------------------------------------------ */
 @media (max-width: 768px) {
   .btn {
     width: 100%;
