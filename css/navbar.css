@@ -1,0 +1,127 @@
+/* ==========================================================================
+   Navbar (Landing & Dashboard)
+   ========================================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(10, 10, 21, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+  transition: height 0.3s ease, background 0.3s ease;
+}
+
+.navbar.scrolled {
+  height: 64px;
+  background: rgba(10, 10, 21, 0.98);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+}
+
+.logo span {
+  color: #6366f1;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.6rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #e0e0ff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.btn-nav {
+  padding: 0.5rem 1.1rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  background: rgba(99, 102, 241, 0.25);
+  color: #a5b4fc !important;
+  border: 1px solid rgba(99, 102, 241, 0.5);
+}
+
+/* User Nav di Dashboard */
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.welcome {
+  font-size: 1.1rem;
+  color: #e0e0ff;
+}
+
+.btn-logout {
+  padding: 0.6rem 1.3rem;
+  background: rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.5);
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(7px, 7px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hamburger { display: flex; }
+  .nav-menu, .nav-user { 
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: rgba(10, 10, 21, 0.98);
+    padding: 1.5rem 5%;
+    flex-direction: column;
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.35s ease;
+  }
+  .nav-menu.active, .nav-user.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav-links { flex-direction: column; gap: 1.6rem; }
+  .nav-user { gap: 1rem; }
+  .welcome { font-size: 1rem; max-width: 140px; }
+  .btn-logout { padding: 0.5rem 1rem; font-size: 0.95rem; }
+}

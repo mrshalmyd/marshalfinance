@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Marshal Finance - Solusi Keuangan Cerdas, Aman, dan Mudah untuk Masa Depan Finansial Anda" />
+  <link rel="icon" href="favicon.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="favicon.png" sizes="180x180">
+  <title>Marshal Finance</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/navbar.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ===================== -->
+  <!-- Navbar / Navigasi -->
+  <!-- ===================== -->
+  <nav class="navbar">
+    <div class="logo">
+      Marshal<span>Finance</span>
+    </div>
+
+    <div class="nav-menu">
+      <ul class="nav-links">
+        <li><a href="#hero">Beranda</a></li>
+        <li><a href="#fitur">Fitur</a></li>
+        <li><a href="#stats">Statistik</a></li>
+        <li><a href="login.php" class="btn-nav">Masuk</a></li>
+      </ul>
+    </div>
+
+    <!-- Tombol Hamburger (Mobile) -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- ===================== -->
+  <!-- Hero Section -->
+  <!-- ===================== -->
+  <header class="hero" id="hero">
+    <div class="hero-content">
+
+      <!-- Teks Hero -->
+      <div class="hero-text">
+        <h1>Masa Depan <span>Finansial</span> Anda</h1>
+        <p class="subtitle">
+          Kelola kekayaan dengan cerdas, investasi mudah, raih Financial Freedom lebih cepat
+        </p>
+
+        <!-- Tombol CTA -->
+        <div class="hero-buttons">
+          <a href="signup.php" class="btn primary">Mulai Gratis</a>
+          <a href="login.php" class="btn secondary" onclick="return confirm('Demo memerlukan login. Masuk dulu?')">Lihat Demo</a>
+        </div>
+
+        <!-- Badge Kepercayaan -->
+        <div class="trust-badges">
+          <div class="badge">✓ Diawasi OJK</div>
+          <div class="badge">✓ Keamanan Bank</div>
+          <div class="badge">+999.999 Pengguna</div>
+        </div>
+      </div>
+
+      <!-- Visual Hero -->
+      <div class="hero-visual">
+        <div class="card-float card-1">
+          <div class="amount">Rp 9.99 T</div>
+          <div class="label">Aset Terkelola</div>
+        </div>
+
+        <div class="card-float card-2">
+          <div class="growth">+999%</div>
+          <div class="label">Return 2025</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===================== -->
+  <!-- Statistik -->
+  <!-- ===================== -->
+  <section class="stats section" id="stats">
+    <div class="section-header">
+      <h2>Angka Nyata</h2>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">9.99<span>/10</span></div>
+        <div class="stat-label">Rating Pengguna</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-number">Rp 9.99T</div>
+        <div class="stat-label">Aset Terkelola</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-number">999%</div>
+        <div class="stat-label">Kepuasan</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== -->
+  <!-- Fitur Utama -->
+  <!-- ===================== -->
+  <section class="section" id="fitur">
+    <div class="section-header">
+      <h2>Fitur Utama</h2>
+      <p>Kelola keuangan Anda dengan mudah & aman</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Portfolio Tracker</h3>
+        <p>Monitor semua aset real-time dalam satu tempat.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>Smart Invest</h3>
+        <p>Rekomendasi AI sesuai profil risiko Anda.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">💰</div>
+        <h3>Auto Invest</h3>
+        <p>Round-up transaksi jadi investasi otomatis.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== -->
+  <!-- Alasan Memilih Kami -->
+  <!-- ===================== -->
+  <section class="section" id="mengapa">
+    <div class="section-header">
+      <h2>Mengapa Memilih Marshal Finance?</h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon">⚡</div>
+        <h3>Cepat & Mudah</h3>
+        <p>Proses registrasi & investasi secepat kedipan mata Ular</p>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon">🔒</div>
+        <h3>Aman Terjamin</h3>
+        <p>Diawasi oleh Kim Jong Un & menggunakan enkripsi tingkat TNI Afrika</p>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon">📈</div>
+        <h3>Hasil Nyata</h3>
+        <p>Return pengguna dibawah 999% per Menit</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== -->
+  <!-- Testimoni -->
+  <!-- ===================== -->
+  <section class="section" id="testimoni">
+    <div class="section-header">
+      <h2>Apa Kata Pengguna Kami</h2>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p>"GACORRRR! Mudah dipahami dan returnnya mantap."</p>
+        <div class="testi-author">- Parmadi Kun, Jepang Selatan</div>
+      </div>
+
+      <div class="testi-card">
+        <p>"Keamanannya bikin tenang. Semua aset terpantau real-time."</p>
+        <div class="testi-author">- Kim Tukiyem, Korea Barat</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== -->
+  <!-- Footer -->
+  <!-- ===================== -->
+  <footer class="footer">
+    <p>&copy; 2025 Marshal Finance. All rights reserved.</p>
+    <p>Diawasi oleh Guardian of the Galaxy • Keamanan Tingkat Militer Saturnus • Dibuat dengan ❤️ di Mars</p>
+  </footer>
+
+  <!-- ===================== -->
+  <!-- JavaScript -->
+  <!-- ===================== -->
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-menu').classList.toggle('active');
+      document.querySelector('.hamburger').classList.toggle('active');
+    }
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-menu').classList.remove('active');
+        document.querySelector('.hamburger').classList.remove('active');
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      document
+        .querySelector('.navbar')
+        .classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document
+          .querySelector(this.getAttribute('href'))
+          .scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+</html>

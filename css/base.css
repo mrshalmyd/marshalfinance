@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Reset & Base Styles
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #0a0a15;
+  color: #e0e0ff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Typography Global */
+h1, h2, h3, h4 {
+  font-weight: 700;
+}
+
+p {
+  color: #b0b0ff;
+}
+
+/* Buttons Global */
+.btn {
+  padding: 0.9rem 1.8rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.98rem;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  color: white;
+}
+
+.btn.secondary {
+  background: rgba(99, 102, 241, 0.2);
+  color: #c7d2fe;
+  border: 1px solid rgba(99, 102, 241, 0.5);
+}
+
+.btn.large {
+  padding: 1rem 2.2rem;
+  font-size: 1.1rem;
+}
+
+/* Cards Global */
+.card {
+  background: linear-gradient(135deg, rgba(30, 30, 60, 0.6), rgba(20, 20, 50, 0.5));
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+}
+
+/* Responsive Helper */
+@media (max-width: 768px) {
+  .btn {
+    width: 100%;
+  }
+}

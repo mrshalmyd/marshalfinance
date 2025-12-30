@@ -1,0 +1,111 @@
+/* ==========================================================================
+   Dashboard Specific
+   ========================================================================== */
+.dashboard-content {
+  padding: 110px 6% 80px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.dashboard-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.4rem;
+  margin-bottom: 0.8rem;
+  background: linear-gradient(90deg, #6366f1, #a78bfa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dashboard-header p {
+  font-size: 1.25rem;
+  color: #b0b0ff;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  color: #b0b0ff;
+  margin-bottom: 1rem;
+}
+
+.big-value {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.positive { color: #34d399; }
+.small-label { font-size: 1rem; color: #94a3b8; }
+
+.quick-actions {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2rem;
+}
+
+.action-btn {
+  padding: 1.3rem;
+  background: rgba(99, 102, 241, 0.18);
+  border: 1px solid rgba(99, 102, 241, 0.45);
+  border-radius: 12px;
+  color: #c7d2fe;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+  background: rgba(99, 102, 241, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.chart-container {
+  background: rgba(20, 20, 50, 0.6);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem 0;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+.transaction-list {
+  margin-top: 1rem;
+}
+
+.transaction-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transaction-item:last-child { border: none; }
+
+@media (max-width: 768px) {
+  .dashboard-content { padding: 100px 5% 60px; }
+  .dashboard-header h1 { font-size: 2.6rem; }
+  .summary-cards { grid-template-columns: 1fr; }
+  .big-value { font-size: 2.6rem; }
+}
