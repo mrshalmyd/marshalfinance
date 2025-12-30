@@ -1,207 +1,212 @@
 /* ==========================================================================
-   Navbar (Landing & Dashboard)
+   Landing Page Specific
    ========================================================================== */
 
 /* ------------------------------------------------------------------
-   Navbar Base
+   Hero Section
    ------------------------------------------------------------------ */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 70px;
-  padding: 0 5%;
+.hero {
+  min-height: 90vh;
+  padding: 110px 5% 60px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  z-index: 1000;
-  background: rgba(10, 10, 21, 0.85);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(99, 102, 241, 0.2);
-  transition: height 0.3s ease, background 0.3s ease;
+  background: linear-gradient(135deg, #0a0a15 0%, #121230 100%);
 }
 
-.navbar.scrolled {
-  height: 64px;
-  background: rgba(10, 10, 21, 0.98);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.4rem;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #6366f1, #a78bfa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: #b0b0ff;
+  max-width: 480px;
+  margin-bottom: 1.8rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.trust-badges {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: rgba(30, 30, 60, 0.75);
+  padding: 0.5rem 1rem;
+  border-radius: 40px;
+  font-size: 0.85rem;
 }
 
 /* ------------------------------------------------------------------
-   Logo
+   Floating Cards
    ------------------------------------------------------------------ */
-.logo {
+.hero-visual {
+  position: relative;
+  height: 400px;
+}
+
+.card-float {
+  position: absolute;
+  background: rgba(35, 35, 70, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 20px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  width: 220px;
+}
+
+.card-1 { top: 20%; right: 5%; transform: rotate(-5deg); }
+.card-2 { bottom: 25%; left: 5%; transform: rotate(7deg); }
+
+.card-float .amount,
+.card-float .growth {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #fff;
+  margin-bottom: 0.4rem;
 }
 
-.logo span {
-  color: #6366f1;
-}
+.card-float .growth { color: #34d399; }
+.card-float .label { color: #94a3b8; font-size: 0.9rem; }
 
 /* ------------------------------------------------------------------
-   Navigation Links
+   Stats, Features, Why, Testimoni
    ------------------------------------------------------------------ */
-.nav-links {
+.stats {
+  padding: 5rem 5%;
+  background: rgba(15, 15, 30, 0.7);
+}
+
+.stats-grid {
   display: flex;
-  gap: 1.6rem;
-  list-style: none;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
 }
 
-.nav-links a {
-  color: #e0e0ff;
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
+.stat-item {
+  text-align: center;
+  min-width: 180px;
 }
 
-.nav-links a:hover {
-  color: #fff;
+.stat-number {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
 }
 
-.btn-nav {
-  padding: 0.5rem 1.1rem;
-  font-size: 0.9rem;
-  border-radius: 8px;
-  background: rgba(99, 102, 241, 0.25);
-  color: #a5b4fc !important;
-  border: 1px solid rgba(99, 102, 241, 0.5);
+.stat-number span {
+  font-size: 1.8rem;
+  color: #a5b4fc;
 }
 
-/* ------------------------------------------------------------------
-   User Nav (Dashboard)
-   ------------------------------------------------------------------ */
-.nav-user {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+.stat-label {
+  color: #94a3b8;
+  font-size: 1rem;
 }
 
-.welcome {
-  font-size: 1.1rem;
-  color: #e0e0ff;
+.section {
+  padding: 5rem 5%;
 }
 
-.btn-logout {
-  padding: 0.6rem 1.3rem;
-  background: rgba(239, 68, 68, 0.3);
-  color: #fca5a5;
-  border: 1px solid rgba(239, 68, 68, 0.5);
-  border-radius: 10px;
-  font-weight: 600;
-  text-decoration: none;
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3.5rem;
 }
 
-/* ------------------------------------------------------------------
-   Hamburger Menu
-   ------------------------------------------------------------------ */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
+.section-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
 }
 
-.hamburger span {
-  width: 26px;
-  height: 3px;
-  background: #fff;
-  border-radius: 2px;
+.features-grid,
+.why-grid,
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card,
+.why-item,
+.testi-card {
+  background: rgba(20, 20, 50, 0.55);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(99, 102, 241, 0.22);
+  border-radius: 16px;
+  padding: 2rem;
   transition: all 0.3s ease;
 }
 
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(7px, 7px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
+.feature-card:hover,
+.why-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.25);
 }
 
+.feature-icon { font-size: 2.8rem; margin-bottom: 1.2rem; }
+.testi-card { font-style: italic; text-align: center; }
+.testi-author { margin-top: 1rem; font-style: normal; font-weight: 600; color: #6366f1; }
+.why-icon { font-size: 3rem; margin-bottom: 1rem; }
+
 /* ------------------------------------------------------------------
-   Mobile Styles
+   Mobile Landing
    ------------------------------------------------------------------ */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
+  .hero {
+    padding-top: 100px;
+    text-align: center;
+    min-height: 80vh;
   }
-
-  .nav-menu,
-  .nav-user {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: rgba(10, 10, 21, 0.98);
-    padding: 1.5rem 5%;
+  .hero-content { grid-template-columns: 1fr; }
+  .hero-text h1 { font-size: 2.6rem; }
+  .hero-buttons {
     flex-direction: column;
-    transform: translateY(-20px);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.35s ease;
+    max-width: 340px;
+    margin: 0 auto 2rem;
   }
-
-  .nav-menu.active,
-  .nav-user.active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 1.6rem;
-  }
-
-  .nav-user {
-    gap: 1rem;
-    align-items: flex-end;   /* greeting & logout rata kanan */
-    text-align: right;
-  }
-
-  .welcome {
-    font-size: 1rem;
-    max-width: 140px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .btn-logout {
-    padding: 0.5rem 1rem;
-    font-size: 0.95rem;
-  }
+  .hero-visual { display: none; }
 }
 
 /* ------------------------------------------------------------------
-   Extra Small Devices (≤480px)
+   Footer
    ------------------------------------------------------------------ */
-@media (max-width: 480px) {
-  .welcome {
-    font-size: 0.9rem;
-    max-width: 120px;
-  }
+.footer {
+  background: rgba(10, 10, 21, 0.9);
+  padding: 3rem 5% 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(99, 102, 241, 0.2);
+  color: #b0b0ff;
+  margin-top: 1rem;
+}
 
-  /* Opsional: logout jadi ikon */
-  .btn-logout {
-    font-size: 0;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: rgba(239, 68, 68, 0.6);
-    position: relative;
-  }
-  .btn-logout::before {
-    content: "🔓";
-    font-size: 1.2rem;
-    color: #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+.footer p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
 }

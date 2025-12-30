@@ -91,6 +91,7 @@
   border: 1px solid rgba(239, 68, 68, 0.5);
   border-radius: 10px;
   font-weight: 600;
+  text-decoration: none;
 }
 
 /* ------------------------------------------------------------------
@@ -158,15 +159,49 @@
 
   .nav-user {
     gap: 1rem;
+    align-items: flex-end;   /* greeting & logout rata kanan */
+    text-align: right;
   }
 
   .welcome {
     font-size: 1rem;
     max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .btn-logout {
     padding: 0.5rem 1rem;
     font-size: 0.95rem;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Extra Small Devices (≤480px)
+   ------------------------------------------------------------------ */
+@media (max-width: 480px) {
+  .welcome {
+    font-size: 0.9rem;
+    max-width: 120px;
+  }
+
+  /* Opsional: logout jadi ikon */
+  .btn-logout {
+    font-size: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(239, 68, 68, 0.6);
+    position: relative;
+  }
+  .btn-logout::before {
+    content: "🔓";
+    font-size: 1.2rem;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
