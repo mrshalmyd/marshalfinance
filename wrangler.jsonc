@@ -1,9 +1,8 @@
 {
-  "name": "mfinance",                          // ← GANTI INI jadi mfiance (persis sama dengan nama project di dashboard!)
-  "compatibility_date": "2025-12-30",         // atau update ke tanggal hari ini, misal "2025-12-30"
+  "name": "mfinance",                          
+  "compatibility_date": "2025-12-30",         
   "assets": {
-    "directory": ".",
-    "not_found_handling": "single-page-application"  // opsional tapi recommended untuk static site
+    "directory": "."
   },
   "d1_databases": [{
     "binding": "DB",
