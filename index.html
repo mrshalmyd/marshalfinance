@@ -19,9 +19,7 @@
 
 <body>
 
-  <!-- ===================== -->
-  <!-- Navbar / Navigasi -->
-  <!-- ===================== -->
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="logo">
       Marshal<span>Finance</span>
@@ -32,11 +30,10 @@
         <li><a href="#hero">Beranda</a></li>
         <li><a href="#fitur">Fitur</a></li>
         <li><a href="#stats">Statistik</a></li>
-        <li><a href="login.php" class="btn-nav">Masuk</a></li>
+        <li><a href="https://mfinance-backend.vercel.app/api/login.php" class="btn-nav">Masuk</a></li>
       </ul>
     </div>
 
-    <!-- Tombol Hamburger (Mobile) -->
     <div class="hamburger" onclick="toggleMenu()">
       <span></span>
       <span></span>
@@ -44,26 +41,21 @@
     </div>
   </nav>
 
-  <!-- ===================== -->
   <!-- Hero Section -->
-  <!-- ===================== -->
   <header class="hero" id="hero">
     <div class="hero-content">
 
-      <!-- Teks Hero -->
       <div class="hero-text">
         <h1>Masa Depan <span>Finansial</span> Anda</h1>
         <p class="subtitle">
           Kelola kekayaan dengan cerdas, investasi mudah, raih Financial Freedom lebih cepat
         </p>
 
-        <!-- Tombol CTA -->
         <div class="hero-buttons">
-          <a href="signup.php" class="btn primary">Mulai Gratis</a>
-          <a href="login.php" class="btn secondary" onclick="return confirm('Demo memerlukan login. Masuk dulu?')">Lihat Demo</a>
+          <a href="https://mfinance-backend.vercel.app/api/signup.php" class="btn primary">Mulai Gratis</a>
+          <a href="https://mfinance-backend.vercel.app/api/login.php" class="btn secondary">Lihat Demo</a>
         </div>
 
-        <!-- Badge Kepercayaan -->
         <div class="trust-badges">
           <div class="badge">✓ Diawasi OJK</div>
           <div class="badge">✓ Keamanan Bank</div>
@@ -71,7 +63,6 @@
         </div>
       </div>
 
-      <!-- Visual Hero -->
       <div class="hero-visual">
         <div class="card-float card-1">
           <div class="amount">Rp 9.99 T</div>
@@ -87,9 +78,7 @@
     </div>
   </header>
 
-  <!-- ===================== -->
   <!-- Statistik -->
-  <!-- ===================== -->
   <section class="stats section" id="stats">
     <div class="section-header">
       <h2>Angka Nyata</h2>
@@ -113,9 +102,7 @@
     </div>
   </section>
 
-  <!-- ===================== -->
   <!-- Fitur Utama -->
-  <!-- ===================== -->
   <section class="section" id="fitur">
     <div class="section-header">
       <h2>Fitur Utama</h2>
@@ -143,9 +130,7 @@
     </div>
   </section>
 
-  <!-- ===================== -->
   <!-- Alasan Memilih Kami -->
-  <!-- ===================== -->
   <section class="section" id="mengapa">
     <div class="section-header">
       <h2>Mengapa Memilih Marshal Finance?</h2>
@@ -172,9 +157,7 @@
     </div>
   </section>
 
-  <!-- ===================== -->
   <!-- Testimoni -->
-  <!-- ===================== -->
   <section class="section" id="testimoni">
     <div class="section-header">
       <h2>Apa Kata Pengguna Kami</h2>
@@ -193,17 +176,13 @@
     </div>
   </section>
 
-  <!-- ===================== -->
   <!-- Footer -->
-  <!-- ===================== -->
   <footer class="footer">
     <p>&copy; 2025 Marshal Finance. All rights reserved.</p>
     <p>Diawasi oleh Guardian of the Galaxy • Keamanan Tingkat Militer Saturnus • Dibuat dengan ❤️ di Mars</p>
   </footer>
 
-  <!-- ===================== -->
   <!-- JavaScript -->
-  <!-- ===================== -->
   <script>
     function toggleMenu() {
       document.querySelector('.nav-menu').classList.toggle('active');
@@ -218,19 +197,40 @@
     });
 
     window.addEventListener('scroll', () => {
-      document
-        .querySelector('.navbar')
-        .classList.toggle('scrolled', window.scrollY > 60);
+      document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 60);
     });
 
+    // Smooth scroll untuk anchor link
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document
-          .querySelector(this.getAttribute('href'))
-          .scrollIntoView({ behavior: 'smooth' });
+        if (this.getAttribute('href').startsWith('#')) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        }
       });
     });
+
+    // Contoh: Kalau nanti mau login langsung dari halaman ini (opsional)
+    // Bisa tambah form login di hero, lalu panggil API ini
+    async function handleLogin(username, password) {
+      try {
+        const res = await fetch('https://mfinance-backend.vercel.app/api/login.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+        if (data.success) {
+          localStorage.setItem('token', data.token || 'demo-token');
+          alert('Login berhasil! Redirect ke dashboard...');
+          window.location.href = '/dashboard.html'; // atau update UI
+        } else {
+          alert(data.message || 'Login gagal');
+        }
+      } catch (err) {
+        alert('Koneksi error: ' + err.message);
+      }
+    }
   </script>
 
 </body>
