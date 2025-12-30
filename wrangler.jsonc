@@ -1,5 +1,5 @@
 {
-  "name": "mfinance-d1-proxy",
+  "name": "mfinance",
   "main": "src/index.ts",
   "compatibility_date": "2025-12-30",
   "d1_databases": [
