@@ -1,5 +1,6 @@
 export interface Env {
   DB: D1Database;
+  ASSETS: Fetcher; // binding untuk static assets (sesuai wrangler.jsonc)
 }
 
 export default {
@@ -7,14 +8,29 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname;
 
-    if (path.startsWith('/api/') && path === '/api/query' && request.method === 'POST') {
-      // ... kode query D1 kamu tetap sama ...
+    // Handler API untuk query D1
+    if (path === "/api/query" && request.method === "POST") {
+      try {
+        const { sql, params } = await request.json();
+
+        if (!sql || typeof sql !== "string") {
+          return Response.json({ success: false, error: "SQL tidak valid" }, { status: 400 });
+        }
+
+        const stmt = env.DB.prepare(sql);
+        const bound = Array.isArray(params) && params.length ? stmt.bind(...params) : stmt;
+        const { results } = await bound.all();
+
+        return Response.json({ success: true, results });
+      } catch (err: any) {
+        return Response.json(
+          { success: false, error: err.message || "Query gagal" },
+          { status: 500 }
+        );
+      }
     }
 
-    // Optional: kalau ingin Worker handle fallback sendiri (jarang dipakai)
-    // return env.ASSETS.fetch(request);
-
-    // Kalau tidak cocok /api, biarkan assets handler yang ambil alih
-    return new Response('Not Found', { status: 404 });
+    // Fallback: semua route lain dilayani oleh ASSETS (static file)
+    return env.ASSETS.fetch(request);
   }
 };
