@@ -2,11 +2,19 @@
   "name": "mfinance",
   "main": "src/index.ts",
   "compatibility_date": "2025-12-30",
+  
+  "assets": {
+    "directory": "./",                  // ← ini kuncinya! pakai "./" untuk root project
+    "binding": "ASSETS",                // optional tapi bagus untuk masa depan
+    "not_found_handling": "single-page-application",  // supaya route random serve index.html (cocok kalau app kamu seperti SPA atau butuh fallback)
+    "run_worker_first": ["/api/*"]      // Worker hanya jalan untuk path /api/* (API kamu), sisanya langsung serve static file
+  },
+  
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "finance-db",
-      "database_id": "931bfa74-ed31-4019-9941-ec374ff93cc5" 
+      "database_id": "931bfa74-ed31-4019-9941-ec374ff93cc5"
     }
   ]
 }

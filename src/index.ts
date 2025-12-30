@@ -1,5 +1,6 @@
 export interface Env {
-  DB: finance_db;
+  DB: D1Database;
+  ASSETS: Fetcher;  // ← tambah ini kalau perlu
 }
 
 export default {
@@ -7,19 +8,14 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname;
 
-    // Contoh endpoint: /api/query
-    if (path === '/api/query' && request.method === 'POST') {
-      try {
-        const { sql, params } = await request.json<{ sql: string; params?: any[] }>();
-        const stmt = env.DB.prepare(sql);
-        const result = params ? await stmt.bind(...params).all() : await stmt.all();
-
-        return Response.json({ success: true, results: result.results, meta: result.meta });
-      } catch (e: any) {
-        return Response.json({ success: false, error: e.message }, { status: 500 });
-      }
+    if (path.startsWith('/api/') && path === '/api/query' && request.method === 'POST') {
+      // ... kode query D1 kamu tetap sama ...
     }
 
+    // Optional: kalau ingin Worker handle fallback sendiri (jarang dipakai)
+    // return env.ASSETS.fetch(request);
+
+    // Kalau tidak cocok /api, biarkan assets handler yang ambil alih
     return new Response('Not Found', { status: 404 });
   }
 };
