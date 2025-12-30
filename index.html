@@ -209,28 +209,6 @@
         }
       });
     });
-
-    // Contoh: Kalau nanti mau login langsung dari halaman ini (opsional)
-    // Bisa tambah form login di hero, lalu panggil API ini
-    async function handleLogin(username, password) {
-      try {
-        const res = await fetch('https://mfinance-backend.vercel.app/api/login.php', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ username, password })
-        });
-        const data = await res.json();
-        if (data.success) {
-          localStorage.setItem('token', data.token || 'demo-token');
-          alert('Login berhasil! Redirect ke dashboard...');
-          window.location.href = '/dashboard.html'; // atau update UI
-        } else {
-          alert(data.message || 'Login gagal');
-        }
-      } catch (err) {
-        alert('Koneksi error: ' + err.message);
-      }
-    }
   </script>
 
 </body>
