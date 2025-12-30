@@ -2,6 +2,13 @@
    Dashboard Specific
    ========================================================================== */
 
+/* Variables */
+:root {
+  --primary: #6366f1;
+  --secondary: #a78bfa;
+  --positive: #34d399;
+}
+
 /* ------------------------------------------------------------------
    Layout & Header
    ------------------------------------------------------------------ */
@@ -20,7 +27,7 @@
   font-family: 'Playfair Display', serif;
   font-size: 3.4rem;
   margin-bottom: 0.8rem;
-  background: linear-gradient(90deg, #6366f1, #a78bfa);
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -28,7 +35,7 @@
 
 .dashboard-header p {
   font-size: 1.25rem;
-  color: #b0b0ff;
+  color: #d1d5ff;
   max-width: 600px;
   margin: 0 auto;
 }
@@ -43,6 +50,13 @@
   margin-bottom: 4rem;
 }
 
+.card {
+  background: rgba(30, 30, 60, 0.5);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
 .card h3 {
   font-size: 1.5rem;
   color: #b0b0ff;
@@ -55,8 +69,9 @@
   margin-bottom: 0.6rem;
 }
 
-.positive { color: #34d399; }
+.positive { color: var(--positive); }
 .small-label { font-size: 1rem; color: #94a3b8; }
+.highlight { border: 2px solid var(--primary); }
 
 /* ------------------------------------------------------------------
    Quick Actions
@@ -87,7 +102,7 @@
 
 .action-btn:hover {
   background: rgba(99, 102, 241, 0.35);
-  transform: translateY(-4px);
+  transform: scale(1.02);
   box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
 }
 
@@ -133,5 +148,21 @@
   }
   .big-value {
     font-size: 2.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header h1 {
+    font-size: 2rem;
+  }
+  .dashboard-header p {
+    font-size: 1rem;
+  }
+  .big-value {
+    font-size: 2.2rem;
+  }
+  .action-btn {
+    font-size: 1rem;
+    padding: 1rem;
   }
 }
